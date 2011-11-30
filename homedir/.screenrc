@@ -1,0 +1,24 @@
+## .screenrc
+## Naoto Ohshiba(2008.09.20)
+##
+# encoding
+defencoding utf8
+
+startup_message off
+
+autodetach on
+
+vbell off
+
+defscrollback 3000
+
+
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %y/%m/%d(%D) %{=b wb}%c"
+
+
+bind w windowlist -b
+bind ^U encoding utf8 utf8
+bind ^E encoding eucjp utf8
+bind ^W encoding sjis utf8
