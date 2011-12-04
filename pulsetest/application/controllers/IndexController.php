@@ -10,12 +10,13 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
-        $smarty = new Pulse_View_Smarty();
-
-	// get option
-	$bootstrap = $this->getInvokeArg('bootstrap');
-	$option = $bootstrap->getOptions();
+        // get option
+        $bootstrap = $this->getInvokeArg('bootstrap');
+        $option = $bootstrap->getOptions();
+        /*
+        if ($bootstrap->getResource('smarty')) {
+            error_log('smarty!');
+        }*/
     }
 
 }
