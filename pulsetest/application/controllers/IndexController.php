@@ -11,9 +11,8 @@ class IndexController extends Zend_Controller_Action
     public function indexAction()
     {
         // action body
-	 $smarty = new Pulse_View_Smarty();
+        $smarty = new Pulse_View_Smarty();
     }
 
-
 }
-
+?>
