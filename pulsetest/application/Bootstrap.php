@@ -19,6 +19,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $view = null;
         $_SESSION = array();
 
+        // FIXME: この処理はリソースプラグインにするべき。
         $option = $this->getOptions();
         if (isset($option['smarty'])) {
             $view =  new Pulse_View_Smarty($option['smarty']);
