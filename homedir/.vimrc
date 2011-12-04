@@ -1,6 +1,5 @@
 " color
 syntax on
-colorscheme my
 
 highlight LineNr ctermfg=darkyellow
 highlight NonText ctermfg=darkgrey
