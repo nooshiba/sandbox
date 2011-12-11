@@ -7,7 +7,32 @@
  */
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
+    protected $_application;
 
+    /**
+     * コンストラクタ
+     *
+     * @param Zend_Application $application 
+     */
+    public function __construct($application)
+    {
+        parent::__construct($application);
+        $this->_application = $application;
+
+    }
+
+    /**
+     * ブートストラップを設定します
+     *
+     * @return なし
+     */
+    protected function _initAutoload()
+    {
+        require_once 'smarty/Smarty.class.php';
+        $this->_application->getAutoloader()
+                    ->unregisterNamespace(array('Zend_', 'ZendX_'))
+                    ->setFallbackAutoloader(true);
+    }
 
     /**
      * smartyをviewとして利用するための初期化処理です
@@ -33,6 +58,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         }
 
         // ここで戻り値を返すことによって、リソースレジストリに登録される
+        // （と思ったが、リソースにする意味は無い？検討すること。）
         return $view;
     }
 

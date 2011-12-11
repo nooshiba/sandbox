@@ -1,5 +1,4 @@
 <?php
-require_once 'smarty/Smarty.class.php';
 require_once 'Zend/Application.php';
 
 // Define path to application directory
@@ -27,9 +26,6 @@ function main()
         APPLICATION_ENV,
         APPLICATION_PATH . '/configs/application.ini'
     );
-    $application->getAutoloader()
-                ->unregisterNamespace(array('Zend_', 'ZendX_'))
-                ->setFallbackAutoloader(true);
 
     $application->bootstrap()
                 ->run();
